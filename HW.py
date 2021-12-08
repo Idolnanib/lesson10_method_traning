@@ -10,9 +10,18 @@
 # 2. Вывести все подходящие телефоны
 # 3. Выход
 
+def examination(a, b, c, ):
+    if a < 50000 and b >= 32 and c == 'черный' or с == 'белый':
+        return True
+
+    else:
+        return False
+
 
 
 user_input = ''
+
+list_of_title = []
 
 while user_input != '3':
     print('1. Проверить телефон')
@@ -20,3 +29,23 @@ while user_input != '3':
     print("3. Выход")
 
     user_input = input("Бро.Ты знаешь что делать ")
+
+    if user_input == '1':
+        title = input('Как называется мобила : ')
+        price = int(input('Сколько стоит теха? : '))
+        memory = int(input('Какая у нее память? : '))
+        colour = input('Какой у нее цвет? : ')
+
+        print(examination(price, memory, colour))
+
+        if examination(price, memory, colour) == True:
+            list_of_title.append(title)
+
+    elif user_input == '2':
+        print(list_of_title)
+
+    elif user_input == '3':
+        print('Удачи')
+
+    else:
+        print('Что-то ты ввел не то. Try again')
