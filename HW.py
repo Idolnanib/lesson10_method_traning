@@ -10,8 +10,8 @@
 # 2. Вывести все подходящие телефоны
 # 3. Выход
 
-def examination(a, b, c, ):
-    if a < 50000 and b >= 32 and c == 'черный' or с == 'белый':
+def examination(a, b, c):
+    if a < 50000 and b >= 32 and c == 'черный' or c == 'белый':
         return True
 
     else:
@@ -36,9 +36,13 @@ while user_input != '3':
         memory = int(input('Какая у нее память? : '))
         colour = input('Какой у нее цвет? : ')
 
-        print(examination(price, memory, colour))
+        d = examination(price, memory, colour)
 
-        if examination(price, memory, colour) == True:
+        print(d)
+
+        if not d:
+            print()
+        else:
             list_of_title.append(title)
 
     elif user_input == '2':
