@@ -10,46 +10,90 @@
 # 2. Вывести все подходящие телефоны
 # 3. Выход
 
-def examination(a, b, c):
-    if a < 50000 and b >= 32 and c == 'черный' or c == 'белый':
-        return True
+# def examination(a, b, c):
+#     if a < 50000 and b >= 32 and c == 'черный' or c == 'белый':
+#         return True
+#
+#     else:
+#         return False
+#
+#
+#
+# user_input = ''
+#
+# list_of_title = []
+#
+# while user_input != '3':
+#     print('1. Проверить телефон')
+#     print("2. Вывести все подходящие телефоны")
+#     print("3. Выход")
+#
+#     user_input = input("Бро.Ты знаешь что делать ")
+#
+#     if user_input == '1':
+#         title = input('Как называется мобила : ')
+#         price = int(input('Сколько стоит теха? : '))
+#         memory = int(input('Какая у нее память? : '))
+#         colour = input('Какой у нее цвет? : ')
+#
+#         d = examination(price, memory, colour)
+#
+#         print(d)
+#
+#         if not d:  # классно он тут все сам поменял
+#             print()
+#         else:
+#             list_of_title.append(title)
+#
+#     elif user_input == '2':
+#         print(list_of_title)
+#
+#     elif user_input == '3':
+#         print('Удачи')
+#
+#     else:
+#         print('Что-то ты ввел не то. Try again')
 
+
+
+# Задача 2 Напишите небольшой калькулятор, в котором юзер вводит два числа и знак действия (+ - * /).
+# Поскольку для выполнения арифметических действий нужно вводить именно числа,
+# то не помешает написать метод, проверяющий, является ли введенный символ с консоли числом.
+# Напишите метод, который ПРИНИМАЕТ введенный с консоли символ и ВОЗВРАЩАЕТ true, если символ является числом, иначе - false.
+# С помощью данного метода вам нужно проверить оба числа, который вводит пользователь.
+# Также напишите метод, который ПРИНИМАЕТ введенный знак арифметической операции и проверяет,
+# что такая операция существует. Если существует, то ВОЗВРАЩАЕТ true, иначе - false.
+
+def examination_number(x, y):
+    if type(x) == int and type(y) == int:
+        return True
     else:
         return False
 
-
-
-user_input = ''
-
-list_of_title = []
-
-while user_input != '3':
-    print('1. Проверить телефон')
-    print("2. Вывести все подходящие телефоны")
-    print("3. Выход")
-
-    user_input = input("Бро.Ты знаешь что делать ")
-
-    if user_input == '1':
-        title = input('Как называется мобила : ')
-        price = int(input('Сколько стоит теха? : '))
-        memory = int(input('Какая у нее память? : '))
-        colour = input('Какой у нее цвет? : ')
-
-        d = examination(price, memory, colour)
-
-        print(d)
-
-        if not d:
-            print()
-        else:
-            list_of_title.append(title)
-
-    elif user_input == '2':
-        print(list_of_title)
-
-    elif user_input == '3':
-        print('Удачи')
-
+def examination_sign(x):
+    if x == '+' or x == '-' or x == '*' or x == '/':
+        return True
     else:
-        print('Что-то ты ввел не то. Try again')
+        return  False
+
+
+
+
+a = int(input('Введи первое число : '))
+b = int(input('Введи второе число : '))
+c = input('Введи знак действия (+ - * /) : ')
+
+print(examination_number(a, b), 'это про числа')
+
+print(examination_sign(c),'это про знак действия')
+
+if c == '+':
+    print(a + b)
+elif c == '-':
+    print(a - b)
+elif c == '*':
+    print(a * b)
+elif c == '/':
+    print(a / b)
+else:
+    print('Что то не так вышло.')
